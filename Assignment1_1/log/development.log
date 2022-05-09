@@ -1,0 +1,130 @@
+  [1m[35m (13.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (114.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (98.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateIndustries (20220508121653)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "industries" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "registration_number" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220508121653"]]
+  [1m[36mTRANSACTION (86.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateSectors (20220508121712)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "sectors" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220508121712"]]
+  [1m[36mTRANSACTION (79.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateIndustriesSectors (20220508124021)
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (181.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (80.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateIndustries (20220508121653)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "industries" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "registration_number" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220508121653"]]
+  [1m[36mTRANSACTION (80.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateSectors (20220508121712)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "sectors" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220508121712"]]
+  [1m[36mTRANSACTION (79.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateIndustriesSectors (20220508124021)
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateIndustriesSectors (20220508124021)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "industries_sectors" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "sector_id" integer NOT NULL, "industry_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_3d0abf73fe"
+FOREIGN KEY ("sector_id")
+  REFERENCES "sectors" ("id")
+, CONSTRAINT "fk_rails_b4e673a06c"
+FOREIGN KEY ("industry_id")
+  REFERENCES "industries" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_industries_sectors_on_sector_id" ON "industries_sectors" ("sector_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE INDEX "index_industries_sectors_on_industry_id" ON "industries_sectors" ("industry_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220508124021"]]
+  [1m[36mTRANSACTION (177.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-05-08 13:05:07.364859"], ["updated_at", "2022-05-08 13:05:07.364859"]]
+  [1m[36mTRANSACTION (1611.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2022-05-08 18:56:20 +0530
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/khushbu/.rvm/gems/ruby-3.0.0/gems/railties-7.0.2.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/khushbu/.rvm/gems/ruby-3.0.0/gems/railties-7.0.2.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 9.8ms | Allocations: 700)
+Completed 200 OK in 58ms (Views: 17.6ms | ActiveRecord: 0.0ms | Allocations: 6932)
+
+
+Started GET "/" for ::1 at 2022-05-08 18:57:51 +0530
+Processing by IndustriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering industries/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/industries/index.html.erb:6
+  [1m[36mIndustry Load (0.6ms)[0m  [1m[34mSELECT "industries".* FROM "industries"[0m
+  ↳ app/views/industries/index.html.erb:6
+  Rendered industries/index.html.erb within layouts/application (Duration: 20.3ms | Allocations: 1794)
+  Rendered layout layouts/application.html.erb (Duration: 600.6ms | Allocations: 92893)
+Completed 200 OK in 684ms (Views: 602.8ms | ActiveRecord: 1.5ms | Allocations: 102735)
+
+
+Started GET "/industries/new" for ::1 at 2022-05-08 18:57:54 +0530
+Processing by IndustriesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering industries/new.html.erb within layouts/application
+  Rendered industries/_form.html.erb (Duration: 161.6ms | Allocations: 5912)
+  Rendered industries/new.html.erb within layouts/application (Duration: 163.9ms | Allocations: 6247)
+  Rendered layout layouts/application.html.erb (Duration: 173.7ms | Allocations: 8447)
+Completed 200 OK in 208ms (Views: 175.1ms | ActiveRecord: 6.0ms | Allocations: 13314)
+
+
+Started POST "/industries" for ::1 at 2022-05-08 18:58:01 +0530
+Processing by IndustriesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "industry"=>{"name"=>"", "email"=>"", "registration_number"=>""}, "commit"=>"Create Industry"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/industries_controller.rb:27:in `block in create'
+  [1m[36mIndustry Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "industries" WHERE "industries"."name" = ? LIMIT ?[0m  [["name", ""], ["LIMIT", 1]]
+  ↳ app/controllers/industries_controller.rb:27:in `block in create'
+  [1m[36mIndustry Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "industries" WHERE "industries"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/industries_controller.rb:27:in `block in create'
+  [1m[36mIndustry Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "industries" WHERE "industries"."registration_number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/industries_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/industries_controller.rb:27:in `block in create'
+  Rendering layout layouts/application.html.erb
+  Rendering industries/new.html.erb within layouts/application
+  Rendered industries/_form.html.erb (Duration: 8.5ms | Allocations: 2211)
+  Rendered industries/new.html.erb within layouts/application (Duration: 9.4ms | Allocations: 2322)
+  Rendered layout layouts/application.html.erb (Duration: 17.0ms | Allocations: 4572)
+Completed 422 Unprocessable Entity in 42ms (Views: 18.1ms | ActiveRecord: 2.0ms | Allocations: 10910)
+
+
+Started GET "/industries/new" for ::1 at 2022-05-08 18:59:02 +0530
+Processing by IndustriesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering industries/new.html.erb within layouts/application
+  Rendered industries/_form.html.erb (Duration: 11.3ms | Allocations: 1289)
+  Rendered industries/new.html.erb within layouts/application (Duration: 12.8ms | Allocations: 1394)
+  Rendered layout layouts/application.html.erb (Duration: 24.2ms | Allocations: 3589)
+Completed 200 OK in 29ms (Views: 26.7ms | ActiveRecord: 0.0ms | Allocations: 3924)
+
+
+Started GET "/industries" for ::1 at 2022-05-08 19:00:24 +0530
+Processing by IndustriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering industries/index.html.erb within layouts/application
+  [1m[36mIndustry Load (0.2ms)[0m  [1m[34mSELECT "industries".* FROM "industries"[0m
+  ↳ app/views/industries/index.html.erb:6
+  Rendered industries/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 770)
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | Allocations: 2978)
+Completed 200 OK in 14ms (Views: 12.1ms | ActiveRecord: 0.2ms | Allocations: 3313)
+
+

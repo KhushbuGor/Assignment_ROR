@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Industries sectors</h1>
+
+<div id="industries_sectors">
+  <% @industries_sectors.each do |industries_sector| %>
+    <%= render industries_sector %>
+    <p>
+      <%= link_to "Show this industries sector", industries_sector %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New industries sector", new_industries_sector_path %>
