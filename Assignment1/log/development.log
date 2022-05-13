@@ -7638,3 +7638,98 @@ Processing by PhysiciansController#index as HTML
 Completed 200 OK in 24ms (Views: 22.7ms | ActiveRecord: 0.3ms | Allocations: 4337)
 
 
+Started GET "/" for ::1 at 2022-05-12 10:33:22 +0530
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PhysiciansController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/index.html.erb within layouts/application
+  [1m[36mPhysician Load (0.4ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians"[0m
+  ↳ app/views/physicians/index.html.erb:14
+  Rendered physicians/_physician.html.erb (Duration: 1.1ms | Allocations: 277)
+  Rendered physicians/_physician.html.erb (Duration: 0.2ms | Allocations: 24)
+  Rendered physicians/_physician.html.erb (Duration: 0.2ms | Allocations: 24)
+  Rendered physicians/_physician.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered physicians/index.html.erb within layouts/application (Duration: 50.2ms | Allocations: 7188)
+  Rendered layout layouts/application.html.erb (Duration: 162.6ms | Allocations: 40999)
+Completed 200 OK in 240ms (Views: 166.7ms | ActiveRecord: 2.3ms | Allocations: 48909)
+
+
+Started GET "/" for ::1 at 2022-05-12 10:33:27 +0530
+Processing by PhysiciansController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/index.html.erb within layouts/application
+  [1m[36mPhysician Load (0.5ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians"[0m
+  ↳ app/views/physicians/index.html.erb:14
+  Rendered physicians/_physician.html.erb (Duration: 0.2ms | Allocations: 25)
+  Rendered physicians/_physician.html.erb (Duration: 0.2ms | Allocations: 24)
+  Rendered physicians/_physician.html.erb (Duration: 0.2ms | Allocations: 24)
+  Rendered physicians/_physician.html.erb (Duration: 0.2ms | Allocations: 24)
+  Rendered physicians/index.html.erb within layouts/application (Duration: 8.8ms | Allocations: 1413)
+  Rendered layout layouts/application.html.erb (Duration: 18.3ms | Allocations: 3622)
+Completed 200 OK in 20ms (Views: 19.0ms | ActiveRecord: 0.5ms | Allocations: 3965)
+
+
+Started GET "/" for ::1 at 2022-05-12 10:39:08 +0530
+Processing by PhysiciansController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/index.html.erb within layouts/application
+  [1m[36mPhysician Load (0.2ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians"[0m
+  ↳ app/views/physicians/index.html.erb:14
+  Rendered physicians/_physician.html.erb (Duration: 0.5ms | Allocations: 25)
+  Rendered physicians/_physician.html.erb (Duration: 0.2ms | Allocations: 24)
+  Rendered physicians/_physician.html.erb (Duration: 0.2ms | Allocations: 24)
+  Rendered physicians/_physician.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered physicians/index.html.erb within layouts/application (Duration: 12.0ms | Allocations: 1400)
+  Rendered layout layouts/application.html.erb (Duration: 21.1ms | Allocations: 3609)
+Completed 200 OK in 23ms (Views: 22.3ms | ActiveRecord: 0.2ms | Allocations: 3949)
+
+
+Started GET "/" for ::1 at 2022-05-12 10:54:57 +0530
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PhysiciansController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/index.html.erb within layouts/application
+  [1m[36mPhysician Load (0.3ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians"[0m
+  ↳ app/views/physicians/index.html.erb:14
+  Rendered physicians/_physician.html.erb (Duration: 1.1ms | Allocations: 277)
+  Rendered physicians/_physician.html.erb (Duration: 0.2ms | Allocations: 24)
+  Rendered physicians/_physician.html.erb (Duration: 0.2ms | Allocations: 24)
+  Rendered physicians/_physician.html.erb (Duration: 0.2ms | Allocations: 24)
+  Rendered physicians/index.html.erb within layouts/application (Duration: 31.2ms | Allocations: 7303)
+  Rendered layout layouts/application.html.erb (Duration: 122.2ms | Allocations: 41042)
+Completed 200 OK in 140ms (Views: 125.3ms | ActiveRecord: 1.7ms | Allocations: 48901)
+
+
+Started GET "/" for ::1 at 2022-05-12 10:55:00 +0530
+Processing by PhysiciansController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering physicians/index.html.erb within layouts/application
+  [1m[36mPhysician Load (0.3ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians"[0m
+  ↳ app/views/physicians/index.html.erb:14
+  Rendered physicians/_physician.html.erb (Duration: 0.5ms | Allocations: 25)
+  Rendered physicians/_physician.html.erb (Duration: 0.2ms | Allocations: 24)
+  Rendered physicians/_physician.html.erb (Duration: 0.2ms | Allocations: 24)
+  Rendered physicians/_physician.html.erb (Duration: 0.3ms | Allocations: 24)
+  Rendered physicians/index.html.erb within layouts/application (Duration: 11.6ms | Allocations: 1416)
+  Rendered layout layouts/application.html.erb (Duration: 20.0ms | Allocations: 3625)
+Completed 200 OK in 24ms (Views: 21.9ms | ActiveRecord: 0.3ms | Allocations: 3968)
+
+
+Started GET "/industries" for ::1 at 2022-05-12 10:59:14 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/industries"):
+  
+Started GET "/industries" for ::1 at 2022-05-12 11:01:14 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/industries"):
+  
+Started GET "/industries" for ::1 at 2022-05-12 11:01:30 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/industries"):
+  
+Started GET "/industries" for ::1 at 2022-05-12 11:01:32 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/industries"):
+  

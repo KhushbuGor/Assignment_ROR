@@ -6,7 +6,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 <div class = "container-fluid">
-<h1 align = "center"'>New physician</h1>
+<h1 align = "center">New physician</h1>
 
  
 <div class="card mb-3 mt-5" style="width: 18rem;border-radius: 5%; margin-left: 42%">
@@ -16,10 +16,10 @@
 <%= render "form", physician: @physician %>
   </p>
   </div>
-</div>s
+</div>
 
 <div align = "center">
-  <%= link_to "Back to physicians", physicians_path %>
+  <%= link_to "Back to physicians", physicians_path , class:"btn btn-primary" %>
 </div>
 
 </div>
